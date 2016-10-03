@@ -13,6 +13,9 @@ for ($i = 0; $i < 3; $i++)
     $ai_info[$i] = ($i * 2) + 2;
 }
 
+my $ai_info_size = @ai_info;
+print "ai_info_size = $ai_info_size\n";
+
 for ($i = 0; $i < 3; $i++)
 {
     print "ai_info[$i] = $ai_info[$i]\n";
@@ -27,6 +30,10 @@ for ($i = 0; $i < 3; $i++)
     }
 }
 
+my $ai_2d_info_row = @ai_2d_info;
+my $ai_2d_info_col = @{$ai_2d_info[0]};
+print "ai_2d_info_row = $ai_2d_info_row\n";
+print "ai_2d_info_col = $ai_2d_info_col\n";
 for ($i = 0; $i < 3; $i++)
 {
     for ($j = 0; $j < 2; $j++)
