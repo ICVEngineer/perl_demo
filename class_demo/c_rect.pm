@@ -1,8 +1,8 @@
 #!/usr/bin/perl
 
 package c_rect;
-#use strict;
-#use warnings;
+use strict;
+use warnings;
 
 sub new
 {
