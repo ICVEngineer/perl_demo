@@ -6,11 +6,12 @@ use warnings;
 print "loop demo\n";
 
 my $i_cur_item;
+my ($i, $j);
 
 print "=============================\n";
 print " for \n";
 print "=============================\n";
-for (my $i = 0; $i < 5; $i++)
+for ($i = 0; $i < 5; $i++)
 {
     if ($i == 1)
     {
@@ -58,4 +59,20 @@ while ($loop_cnt < 5)
     }
     print "loop_cnt == $loop_cnt \n";
     $loop_cnt++;
+}
+
+print "=============================\n";
+print " next LABLE\n";
+print "=============================\n";
+I_LOOP:for ($i = 0; $i < 5; $i++)
+{
+	for ($j = 0; $j < 3; $j++)
+	{
+		if (($i * $j) == 2)
+		{
+			print "$i * $j == 2\n";
+			next I_LOOP;
+		}
+		print "i == $i, j == $j\n";
+	}
 }

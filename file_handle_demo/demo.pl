@@ -34,11 +34,12 @@ while ($str_line_info = <$rd_file_fh>)
 {
     $i_line_cnt++;
     chomp($str_line_info);
-    print "i_line_cnt == $i_line_cnt, str_line_info == $str_line_info\n";
-    for (my $i = 0; $i < 4; $i++)
+    #print "i_line_cnt == $i_line_cnt, str_line_info == $str_line_info\n";
+    
+	for (my $i = 0; $i < 4; $i++)
     {
-        #print $wr_file_fh[$i] 
-        $wr_file_fh[$i]->print("$i $i_line_cnt $str_line_info\n");
+        print {$wr_file_fh[$i]} "$i $i_line_cnt $str_line_info\n";
+        #$wr_file_fh[$i]->print("$i $i_line_cnt $str_line_info\n");
     }
 }
 

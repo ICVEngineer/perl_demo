@@ -61,6 +61,7 @@ sub update
 sub print
 {
     my ($self) = @_;
+	print "====== c_rect obj ======\n";
     print "mi_length == $self->{mi_length}\n";
     print "mi_width == $self->{mi_width}\n";
     print "mi_area == $self->{mi_area}\n";

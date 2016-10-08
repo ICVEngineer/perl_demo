@@ -12,11 +12,16 @@ sub new
     my $self = c_rect->new($i_length, $i_width);
     $self->{mi_height} = $i_height;
     $self->{mi_volume} = $self->{mi_area} * $i_height;
+
+	my @ai_side_len = ($i_length, $i_width, $i_height);
+	@{$self->{ai_side_len}} = @ai_side_len;
+
     #print "mi_length == $self->{mi_length}\n";
     #print "mi_width == $self->{mi_width}\n";
     #print "mi_height == $self->{mi_height}\n";
     #print "mi_area == $self->{mi_area}\n";
     #print "mi_volume == $self->{mi_volume}\n";
+	#print "ai_side_len == @{$self->{ai_side_len}}\n";
     bless $self, $class;
     return $self;
 }
@@ -54,19 +59,36 @@ sub get_volume
     return $self->{mi_volume};
 }
 
+sub get_side_len
+{
+	my ($self) = @_;
+	my @ai_side_len = @{$self->{ai_side_len}};
+	return @ai_side_len;
+}
+
 sub update
 {
     my ($self) = @_;
     $self->c_rect::update();
-    $self->{mi_volume} = $self->{mi_area} * $self->{mi_height};
+    my $mi_length = $self->{mi_length};
+    my $mi_width  = $self->{mi_width};
+    my $mi_height = $self->{mi_height};
+    my $mi_area   = $self->{mi_area};
+    $self->{mi_volume} = $mi_area * $mi_height;
+	my @ai_side_len = ($mi_length, $mi_width, $mi_height);
+    @{$self->{ai_side_len}} = @ai_side_len;
 }
 
 sub print
 {
     my ($self) = @_;
-    $self->c_rect::print();
+	print "====== c_cube obj ======\n";
+	print "mi_length == $self->{mi_length}\n";
+	print "mi_width == $self->{mi_width}\n";
+	print "mi_area == $self->{mi_area}\n";
     print "mi_height == $self->{mi_height}\n";
     print "mi_volume == $self->{mi_volume}\n";
+    print "ai_side_len == @{$self->{ai_side_len}}\n";
 }
 
 1;
