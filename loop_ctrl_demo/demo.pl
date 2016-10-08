@@ -62,7 +62,7 @@ while ($loop_cnt < 5)
 }
 
 print "=============================\n";
-print " next LABLE\n";
+print " next LABEL\n";
 print "=============================\n";
 I_LOOP:for ($i = 0; $i < 5; $i++)
 {
