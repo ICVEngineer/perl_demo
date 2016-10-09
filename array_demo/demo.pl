@@ -19,6 +19,11 @@ print "ai_info_size = $ai_info_size\n";
 for ($i = 0; $i < 3; $i++)
 {
     print "ai_info[$i] = $ai_info[$i]\n";
+
+    if ($i == $#ai_info)
+    {
+        print "last idx == $#ai_info\n";
+    }
 }
 
 my @ai_2d_info;
